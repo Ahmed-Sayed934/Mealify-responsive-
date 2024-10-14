@@ -493,7 +493,7 @@ h5 {
 }
 /*^===========FOOTER=============*/
 #Footer {
-	background-image: url(images/textured-metal-background.jpg);
+	background-image: url(/images/textured-metal-background.jpg);
 	background-position: center;
 	background-size: cover;
 	display: flex;
