@@ -1,0 +1,816 @@
+/**================RESETTING CSS VALUES================== */
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Inter", sans-serif;
+}
+body ::selection {
+	background-color: #e61414;
+	color: white;
+}
+img {
+	display: block;
+	max-width: 100%;
+}
+input,
+button,
+textarea,
+a {
+	font: inherit;
+}
+ul {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+}
+button,
+input[type="submit"],
+input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: "Amatic SC", sans-serif;
+}
+/**=============GENERAL VALUES===========  */
+.container {
+	width: 92%;
+	margin: auto;
+}
+
+/* ^==============NAV BAR=============== */
+
+.navBar {
+	z-index: 999;
+	padding: 20px 15px;
+	background-color: rgb(255, 255, 255);
+	position: fixed;
+	left: 0;
+	right: 0;
+	display: flex;
+}
+.navBar .navLinks ul {
+	display: none;
+	gap: 25px;
+}
+.navBar .navLinks ul li {
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 12px;
+}
+
+.navBar .navLinks ul li::after {
+	content: "";
+	height: 2px;
+	width: 100%;
+	background-color: #ce1212;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transform: translate(-101%);
+	transition: all 0.4s;
+}
+.navBar .navLinks ul li:hover::after {
+	transform: translate(0);
+}
+.navBar .navLinks ul li a {
+	padding: 10px 0;
+	color: #7f7f90;
+	font-weight: 600;
+}
+.navBar .navLinks ul li:hover a {
+	color: black;
+}
+.headerIcons {
+	display: flex;
+	gap: 15px;
+}
+
+.navBar .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.navBar .container h1 {
+	font-family: "Inter", sans-serif;
+}
+.navBar .container h1 a,
+.navBar .container div i {
+	color: #212529;
+	font-weight: 700;
+	font-size: 30px;
+}
+.navBar a span {
+	color: #ce1212;
+}
+
+/*^===========HOME=============*/
+
+#Home {
+	padding: 100px 0 50px;
+	background-color: #eee;
+}
+#Home .container {
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 50px;
+	background-color: #eee;
+}
+.homeData {
+	text-align: center;
+}
+.homeData h2 {
+	font-size: 65px;
+	color: #37373f;
+	font-weight: 700;
+	padding-bottom: 25px;
+}
+.homeData p {
+	color: #4f4f5a;
+	line-height: 25px;
+	font-weight: 400;
+	padding: 15px 0 30px;
+}
+.home-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 35px;
+}
+.home-buttons a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	padding: 5px 0;
+	border-radius: 30px;
+	color: #212529;
+}
+.home-buttons a.book {
+	padding: 15px 20px;
+	background-color: #ce1212;
+	color: white;
+}
+.home-buttons a.book:hover {
+	background-color: #e61414;
+}
+.home-buttons a.watch:hover {
+	color: #e61414;
+}
+.playIcon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background-color: white;
+	width: 45px;
+	height: 45px;
+	position: relative;
+}
+.playIcon::before {
+	width: 100%;
+	height: 100%;
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: 8px solid;
+	border-radius: 50%;
+	border-color: #ce1212 transparent transparent #ce1212;
+	transform: rotate(-45deg);
+}
+#Home .container .imgContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*^===========CHEFS=============*/
+#Chefs {
+	padding: 50px 0;
+}
+#Chefs .container {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+#Chefs .container h2 {
+	font-size: 50px;
+	font-weight: 400;
+}
+#Chefs .container h2 span {
+	color: #ce1212;
+}
+#Chefs .container p {
+	color: #7f7f90;
+	font-size: 14px;
+}
+#Chefs .container .chefCards {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+#Chefs .container .chefCards .card {
+	overflow: hidden;
+	border-radius: 10px;
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	box-shadow: 3px 3px 15px 0px rgba(0, 0, 0, 0.1);
+	position: relative;
+	transition: transform 0.4s;
+}
+#Chefs .container .chefCards .card:hover {
+	transform: scale(1.05);
+}
+#Chefs .container .chefCards .card:hover ul {
+	transform: translateX(-120%);
+	transition-delay: 0.4s;
+}
+#Chefs .container .chefCards .card ul {
+	background-color: rgba(255, 255, 255, 0.3);
+	padding: 10px;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	right: -10%;
+	top: 10%;
+	transition: transform 0.4s;
+}
+
+#Chefs .container .chefCards .card ul li a {
+	color: #212529;
+	opacity: 0.4;
+	transition: opacity 0.2s;
+	font-size: 18px;
+}
+#Chefs .container .chefCards .card ul li a:hover {
+	opacity: 1;
+}
+
+#Chefs .container .chefCards .card .cardPic {
+	position: relative;
+	width: 100%;
+}
+#Chefs .container .chefCards .card .cardPic img {
+	width: 100%;
+}
+#Chefs .container .chefCards .card .cardPic::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 20%;
+	bottom: -1%;
+	left: 0;
+	background-image: url(/images/team-shape.svg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+#Chefs .container .chefCards .card .cardContent {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 20px;
+}
+#Chefs .container .chefCards .card .cardContent h3 {
+	color: #212529;
+	font-size: 18.72px;
+	font-weight: 700;
+	font-family: "Inter", sans-serif;
+}
+#Chefs .container .chefCards .card .cardContent p {
+	font-size: 15px;
+	color: #7f7f90;
+	font-style: italic;
+}
+#Chefs .container .chefCards .card .cardContent p.job {
+	font-size: 14px;
+	font-style: normal;
+}
+
+/*^===========GALLERY=============*/
+
+#Gallery {
+	background-color: #eee;
+	padding: 40px 0;
+}
+#Gallery .container {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	align-items: center;
+}
+#Gallery .container p {
+	color: #7f7f90;
+	font-size: 15px;
+}
+#Gallery .container h2 {
+	font-size: 50px;
+	font-weight: 400;
+}
+#Gallery .container h2 span {
+	color: #ce1212;
+}
+#Gallery .container .galleryPictures {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	width: 100%;
+}
+#Gallery .container .galleryPictures div {
+	border: 5px solid white;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+#Gallery .container .galleryPictures div .overlay {
+	text-align: center;
+	padding: 0 10px;
+	border: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #0000005d;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 5px;
+	transform: translatey(101%);
+	transition: all 0.7s;
+}
+#Gallery .container .galleryPictures div .overlay h2,
+#Gallery .container .galleryPictures div .overlay p {
+	color: #ffffff;
+	font-family: "Inter", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+}
+#Gallery .container .galleryPictures div .overlay h2 {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+#Gallery .container .galleryPictures div:hover .overlay {
+	transform: translatey(0);
+}
+#Gallery .container .galleryPictures div:hover img {
+	transform: scale(1.05);
+}
+#Gallery .container .galleryPictures div img {
+	width: 100%;
+	transition: all 0.7s;
+}
+/*^===========Contact Us=============*/
+#Contact .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+#Contact .container h2 {
+	font-size: 50px;
+	font-weight: 400;
+}
+#Contact .container h2 span {
+	color: #ce1212;
+}
+#Contact .container p {
+	color: #7f7f90;
+	font-size: 14px;
+}
+
+#Contact .container iframe {
+	width: 100%;
+	height: 250px;
+}
+#Contact .container .contactOptions {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	padding: 20px 0;
+}
+#Contact .container .contactOptions .option {
+	width: 100%;
+	background-color: #eee;
+	align-items: center;
+	padding: 15px 10px;
+	display: flex;
+	gap: 15px;
+	align-items: center;
+}
+#Contact .container .contactOptions .option h3 {
+	font-family: "Inter", sans-serif;
+	font-weight: 700;
+	color: #7d7d7d;
+	font-size: 20px;
+}
+#Contact .container .contactOptions .option p,
+#Contact .container .contactOptions .option a {
+	font-weight: 400;
+
+	color: #212529;
+	font-size: 15px;
+}
+
+#Contact .container .contactOptions .option .optionLogo {
+	width: 40px;
+	height: 40px;
+	background-color: #ce1212;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.optionLogo i {
+	color: #ffffff;
+}
+#Contact .container .contactOptions .option .optionContent {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+#Contact .container div .contactForm {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 10px;
+}
+#Contact .container .form {
+	width: 100%;
+	padding: 15px 10px;
+	box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.137);
+}
+.contactForm .contactMainData input,
+.contactForm textarea,
+.contactForm input {
+	padding: 15px;
+	border: #2125293f solid 2px;
+	outline-color: red;
+
+	line-height: 20px;
+	font-weight: 400;
+	font-size: 13px;
+}
+.contactForm button {
+	padding: 15px 40px;
+	background-color: #ce1212;
+	align-self: center;
+	border-radius: 35px;
+	color: #ffffff;
+}
+.contactForm .contactMainData {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+/*^===========FOOTER=============*/
+#Footer {
+	background-image: url(/images/textured-metal-background.jpg);
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	color: #ffffff;
+	margin-top: 40px;
+	position: relative;
+}
+#Footer::after {
+	content: "";
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #00000077;
+	position: absolute;
+}
+#Footer .container {
+	z-index: 1;
+	padding: 20px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+#Footer h2,
+#Footer h3 {
+	font-family: "Inter", sans-serif;
+}
+.mealifySocial {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.mealifySocial div img {
+	width: 40px;
+}
+.mealifySocial div {
+	padding: 15px 10px 0;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.mealifySocial div h2 {
+	font-size: 30px;
+	font-weight: 700;
+}
+.mealifySocial div p {
+	font-size: 16px;
+	font-weight: 400;
+}
+.mealifySocial div h2::after {
+	content: ".";
+	color: #ce1212;
+}
+.mealifySocial h3 {
+	text-align: center;
+	border-bottom: #ffffff solid 1px;
+	padding-bottom: 10px;
+}
+.mealifySocial ul {
+	display: flex;
+	justify-content: space-around;
+}
+.mealifySocial ul li a {
+	color: #ffffff;
+	font-size: 24px;
+}
+
+.subscribeOuter {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	width: 100%;
+}
+
+.subscribe,
+.subscribemail {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	width: 100%;
+}
+.subscribemail input,
+.subscribemail button {
+	width: 100%;
+	padding: 10px;
+	line-height: 1;
+}
+.subscribemail input {
+	font-size: 14px;
+	outline: none;
+	border: none;
+}
+.subscribemail button {
+	background-color: #ce1212;
+	transition: all 0.3s;
+}
+.subscribemail button:hover {
+	background-color: #e61414;
+}
+
+.quickLinks {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
+}
+.quickLinks ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px 10px;
+	width: 100%;
+}
+.quickLinks ul li::before {
+	content: "\f105";
+	font-family: FontAwesome;
+	padding-right: 5px;
+}
+.quickLinks ul li {
+	width: calc(calc(100% - 10px) / 2);
+	transition: all 0.4s;
+	padding: 5px 0;
+}
+.quickLinks ul li:hover {
+	transform: translatex(10px);
+	background-color: #222222;
+}
+.quickLinks ul li a {
+	color: #ffffff;
+	padding: 8px 10px;
+	font-weight: 400;
+	font-size: 15px;
+}
+.GetinTouch,
+.GetinTouch ul {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+}
+.GetinTouch ul li {
+	display: flex;
+	gap: 15px;
+	font-size: 16px;
+}
+.GetinTouch ul li i {
+	color: #ce1212;
+	font-size: 18px;
+}
+.GetinTouch ul li a {
+	color: #eee;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+/*^########################## MEDIA #######################################*/
+
+/*! Medium devices (768px and up) */
+@media only screen and (min-width: 768px) {
+	.home-buttons {
+		justify-content: flex-start;
+		gap: 15px;
+	}
+	.home-buttons a.book {
+		border-radius: 0 30px 30px 30px;
+	}
+	#Chefs .container .chefCards,
+	#Contact .container .contactOptions {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	#Chefs .container .chefCards .card,
+	#Contact .container .contactOptions .option,
+	.contactForm .contactMainData input {
+		width: 48%;
+	}
+	.contactForm .contactMainData {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	#Gallery .container .galleryPictures {
+		flex-direction: column;
+		flex-wrap: wrap;
+		height: 310vh;
+	}
+	#Gallery .container .galleryPictures div {
+		width: calc(calc(100% - 20px) / 2);
+	}
+	#Gallery .container .galleryPictures div.overlay {
+		width: 100%;
+	}
+
+	#Footer .container {
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+	.mealifySocial,
+	.GetinTouch {
+		width: calc(calc(100% - 20px) / 2);
+	}
+	.mealifySocial {
+		order: 1;
+	}
+	.GetinTouch {
+		order: 2;
+	}
+	.subscribeOuter {
+		order: 3;
+	}
+	.subscribe {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.subscribemail {
+		flex-direction: row;
+	}
+	.subscribemail input {
+		width: calc(75% - 5px);
+	}
+	.subscribemail button {
+		width: calc(25% - 5px);
+	}
+}
+
+/*! Large devices (1024px and up) */
+@media only screen and (min-width: 1024px) {
+	#Home .container {
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+	}
+	.container {
+		width: 90%;
+	}
+	.imgContainer,
+	.homeData {
+		width: 40%;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+	.navBar .container div i.fa-bars {
+		display: none;
+	}
+	.homeData {
+		text-align: start;
+	}
+	#Home {
+		padding: 100px 100px 50px;
+	}
+	.navBar .navLinks ul {
+		display: flex;
+	}
+	#Chefs .container .chefCards .card {
+		width: 31%;
+	}
+
+	#Gallery .container .galleryPictures {
+		height: 180vh;
+	}
+	#Gallery .container .galleryPictures div {
+		width: calc(calc(100% - 40px) / 3);
+	}
+	#Gallery .container .galleryPictures div.overlay {
+		width: 100%;
+	}
+
+	#Footer .container {
+		align-items: flex-start;
+	}
+	.mealifySocial {
+		order: 1;
+		width: calc(calc(50% - 40px) / 2);
+	}
+	.GetinTouch {
+		order: 3;
+		width: calc(calc(50% - 40px) / 2);
+	}
+	.subscribeOuter {
+		order: 2;
+		width: 50%;
+	}
+
+	.subscribemail {
+		gap: 5px;
+	}
+	.subscribemail input {
+		width: calc(70% - 5px);
+	}
+	.subscribemail button {
+		width: calc(30% - 5px);
+		padding: 12px 4px;
+	}
+
+	.pic1 {
+		order: 1;
+	}
+	.pic2 {
+		order: 5;
+	}
+	.pic3 {
+		order: 2;
+	}
+	.pic4 {
+		order: 4;
+	}
+	.pic5 {
+		order: 3;
+	}
+	.pic6 {
+		order: 6;
+	}
+	.pic7 {
+		order: 7;
+	}
+}
