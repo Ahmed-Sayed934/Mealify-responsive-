@@ -280,7 +280,7 @@ h5 {
 	height: 20%;
 	bottom: -1%;
 	left: 0;
-	background-image: url(/images/team-shape.svg);
+	background-image: url(../images/team-shape.svg);
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -493,7 +493,7 @@ h5 {
 }
 /*^===========FOOTER=============*/
 #Footer {
-	background-image: url(/images/textured-metal-background.jpg);
+	background-image: url(../images/textured-metal-background.jpg);
 	background-position: center;
 	background-size: cover;
 	display: flex;
